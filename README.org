@@ -107,8 +107,9 @@ guix describe --format=channels # check you have the expected channels
 :CUSTOM_ID: enter-guix-environment
 :END:
 
+We enter a [[https://guix.gnu.org/manual/1.5.0/en/html_node/Invoking-guix-shell.html][guix shell in a container isolated from the rest of the system]]:
 #+begin_src bash
-guix shell --pure -D mini-chameleon bash gcc-toolchain -- bash --norc
+guix shell --container -D mini-chameleon bash gcc-toolchain -- bash --norc
 #+end_src
 
 ** Build and test mini-chameleon
@@ -129,6 +130,31 @@ guix shell --pure -D mini-chameleon bash gcc-toolchain -- bash --norc
   ./build/debug/testings/perf_dgemm -v seq --check
   ./build/debug/testings/perf_dgetrf -v seq --check
 #+end_src
+
+** Prefer just `--pure`?
+:PROPERTIES:
+:CUSTOM_ID: update-environment
+:END:
+
+#+begin_src bash
+guix shell --pure -D mini-chameleon bash gcc-toolchain -- bash --norc
+#+end_src
+
+Cleanup and build again. What do you observe?
+
+A hint:
+
+#+begin_src bash
+  cmake -S . -B build/debug-openblas -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_STARPU=ON -DBLA_VENDOR=OpenBLAS
+  cmake --build build/debug-openblas
+  # Tests de correction
+  ./build/debug-openblas/testings/check_dgemm -v seq
+  ./build/debug-openblas/testings/check_dgetrf -v seq
+  # Tests de performance
+  ./build/debug-openblas/testings/perf_dgemm -v seq --check
+  ./build/debug-openblas/testings/perf_dgetrf -v seq --check
+#+end_src
+
 
 ** How to update?
 :PROPERTIES:
