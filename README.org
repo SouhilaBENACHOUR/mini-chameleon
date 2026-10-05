@@ -52,7 +52,7 @@ You can [[https://solverstack.gitlabpages.inria.fr/mini-examples/mini-chameleon/
 The project has been originally written by {{{emmanuelagullo}}} and
 {{{mathieufaverge}}} for the option [[https://cisd.enseirb-matmeca.fr/][« Calcul Intensif et Sciences des
 données (CISD) »]] at Enseirb-Matmeca. It is currently maintained by
-{{{emmanuelagullo}}} and {{{gillesmarait}}}. We also thank Alycia
+{{{emmanuelagullo}}} and Gilles Marait. We also thank Alycia
 Lisito for her contribution.
 
 We are thankful to the {{{plafrim}}} team for their constant and
