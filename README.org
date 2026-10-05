@@ -131,10 +131,12 @@ guix shell --container -D mini-chameleon bash gcc-toolchain -- bash --norc
   ./build/debug/testings/perf_dgetrf -v seq --check
 #+end_src
 
-** Prefer just `--pure`?
+** Optional: Test without containerization
 :PROPERTIES:
-:CUSTOM_ID: update-environment
+:CUSTOM_ID: enter-guix-environment-pure
 :END:
+
+Use ~--pure~ instead of ~--container~ (see  [[https://guix.gnu.org/manual/1.5.0/en/html_node/Invoking-guix-shell.html][guix shell reference documentation]]):
 
 #+begin_src bash
 guix shell --pure -D mini-chameleon bash gcc-toolchain -- bash --norc
