@@ -27,6 +27,10 @@ set( DGEMM_srcs
   dgemm_tiled_mpi.c
   # ADD HERE: your additional dgemm implementation
   #  dgemm_xxx.c
+  dgemm_kij.c
+  dgemm_ijk.c
+  dgemm_jik.c
+  
 )
 
 # Define here the list of DGETRF implementation
@@ -39,6 +43,7 @@ set( DGETRF_srcs
   dgetrf_tiled_mpi.c
   # ADD HERE: your additional dgetrf implementation
   #  dgetrf_xxx.c
+  dgetrf_bloc.c
 )
 
 #------------------------------------------

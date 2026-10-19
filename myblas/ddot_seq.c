@@ -12,12 +12,36 @@
  * @date 2021-09-30
  *
  */
+
+
 #include "myblas.h"
+#include <stdio.h>
+
+void affiche( int m, int n, const double *a, int lda, FILE *flux )
+{
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            fprintf( flux, "%f ", a[i + j * lda] );
+        }
+        fprintf( flux, "\n" );
+    }
+}
+
+
 
 double ddot_seq( int N, const double *X, int incX,
                         const double *Y, int incY )
 {
-    return 0.;
+    double dot = 0.0;
+    int xi = 0;
+    int yi = 0;
+
+    for (int i = 0; i < N; i++) {
+        dot += X[xi] * Y[yi];
+        xi += incX;
+        yi += incY;
+    }
+    return dot;
 }
 
 /* To make sure we use the right prototype */

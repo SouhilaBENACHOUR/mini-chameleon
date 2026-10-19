@@ -16,10 +16,12 @@
 #include <assert.h>
 
 int
-dgetrf_seq( CBLAS_LAYOUT layout, int M, int N, double *A, int lda )
+dgetf2( CBLAS_LAYOUT layout, int M, int N, double *A, int lda )
 {
     int m, n, k;
     int K = ( M > N ) ? N : M;
+       
+     (void)layout; /*column-major*/
 
     for( k=0; k<K; k++ ) {
         for( m=k+1; m<M; m++ ) {
@@ -33,6 +35,9 @@ dgetrf_seq( CBLAS_LAYOUT layout, int M, int N, double *A, int lda )
     return ALGONUM_SUCCESS; /* Success */
 }
 
+int dgetrf_seq(CBLAS_LAYOUT  layout, int M, int N, double *A, int  lda ){
+   return dgetf2( layout, M , N, A, lda);
+}
 /* To make sure we use the right prototype */
 static dgetrf_fct_t valid_dgetrf_seq __attribute__ ((unused)) = dgetrf_seq;
 
