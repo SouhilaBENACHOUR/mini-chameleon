@@ -14,15 +14,12 @@
  */
 #include "myblas.h"
 
-// Exemple of ways to add additionnal parameters to your kernel
-// See the registration function to change its value
-static int dgemm_seq_block_size = -1;
-
-int dgemm_seq( CBLAS_LAYOUT layout, CBLAS_TRANSPOSE transA,
-               CBLAS_TRANSPOSE transB, const int M, const int N,
-               const int K, const double alpha, const double *A,
-               const int lda, const double *B, const int ldb,
-               const double beta, double *C, const int ldc )
+/* Version scalaire (code du prof, inchangé) : produit de matrices, 3 boucles */
+int dgemm_scalaire( CBLAS_LAYOUT layout, CBLAS_TRANSPOSE transA,
+                    CBLAS_TRANSPOSE transB, const int M, const int N,
+                    const int K, const double alpha, const double *A,
+                    const int lda, const double *B, const int ldb,
+                    const double beta, double *C, const int ldc )
 {
     int m, n, k;
 
@@ -84,10 +81,24 @@ int dgemm_seq( CBLAS_LAYOUT layout, CBLAS_TRANSPOSE transA,
     return ALGONUM_SUCCESS;
 }
 
-/* To make sure we use the right prototype */
-static dgemm_fct_t valid_dgemm_seq __attribute__ ((unused)) = dgemm_seq;
+/* Méthode de haut niveau : appelle la version la plus rapide.
+ * Pour l'instant c'est dgemm_scalaire ; sera remplacée par bloc + vectorisé. */
+int dgemm_seq( CBLAS_LAYOUT layout, CBLAS_TRANSPOSE transA,
+               CBLAS_TRANSPOSE transB, const int M, const int N,
+               const int K, const double alpha, const double *A,
+               const int lda, const double *B, const int ldb,
+               const double beta, double *C, const int ldc )
+{
+    return dgemm_scalaire( layout, transA, transB, M, N, K,
+                           alpha, A, lda, B, ldb, beta, C, ldc );
+}
 
-/* Declare the variable that will store the information about this version */
+/* To make sure we use the right prototype */
+static dgemm_fct_t valid_dgemm_scalaire __attribute__ ((unused)) = dgemm_scalaire;
+static dgemm_fct_t valid_dgemm_seq      __attribute__ ((unused)) = dgemm_seq;
+
+/* Declare the variables that will store the information about these versions */
+fct_list_t fct_dgemm_scalaire;
 fct_list_t fct_dgemm_seq;
 
 /**
@@ -97,6 +108,16 @@ void dgemm_seq_init( void ) __attribute__( ( constructor ) );
 void
 dgemm_seq_init( void )
 {
+    fct_dgemm_scalaire.mpi    = 0;
+    fct_dgemm_scalaire.tiled  = 0;
+    fct_dgemm_scalaire.starpu = 0;
+    fct_dgemm_scalaire.name   = "scalaire";
+    fct_dgemm_scalaire.helper = "Scalar version of DGEMM (3 loops)";
+    fct_dgemm_scalaire.fctptr = dgemm_scalaire;
+    fct_dgemm_scalaire.next   = NULL;
+
+    register_fct( &fct_dgemm_scalaire, ALGO_GEMM );
+
     fct_dgemm_seq.mpi    = 0;
     fct_dgemm_seq.tiled  = 0;
     fct_dgemm_seq.starpu = 0;
@@ -106,7 +127,4 @@ dgemm_seq_init( void )
     fct_dgemm_seq.next   = NULL;
 
     register_fct( &fct_dgemm_seq, ALGO_GEMM );
-
-    /* Read the value of dgemm_block_size */
-    dgemm_seq_block_size = myblas_getenv_value_int( "GEMM_BLOCKSIZE", 32 );
 }
