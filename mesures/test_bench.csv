@@ -1,0 +1,7 @@
+version,size,median_gflops
+seq,200,4.601668e+00
+seq,501,4.994499e+00
+seq,1000,5.623664e+00
+vendor,200,3.013183e+01
+vendor,501,3.340457e+01
+vendor,1000,3.504223e+01
