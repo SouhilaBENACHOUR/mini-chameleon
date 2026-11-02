@@ -36,7 +36,7 @@ dgetf2( CBLAS_LAYOUT layout, int M, int N, double *A, int lda )
 }
 
 int dgetrf_seq(CBLAS_LAYOUT  layout, int M, int N, double *A, int  lda ){
-   return dgetf2( layout, M , N, A, lda);
+   return dgetrf_bloc( layout, M , N, A, lda);
 }
 /* To make sure we use the right prototype */
 static dgetrf_fct_t valid_dgetrf_seq __attribute__ ((unused)) = dgetrf_seq;
@@ -60,4 +60,24 @@ dgetrf_seq_init( void )
     fct_dgetrf_seq.next   = NULL;
 
     register_fct( &fct_dgetrf_seq, ALGO_GETRF );
+}
+
+/* Register the unblocked LU (dgetf2) so that it can be measured on its own */
+static dgetrf_fct_t valid_dgetf2 __attribute__ ((unused)) = dgetf2;
+
+fct_list_t fct_dgetrf_unblocked;
+
+void dgetrf_unblocked_init( void ) __attribute__( ( constructor ) );
+void
+dgetrf_unblocked_init( void )
+{
+    fct_dgetrf_unblocked.mpi    = 0;
+    fct_dgetrf_unblocked.tiled  = 0;
+    fct_dgetrf_unblocked.starpu = 0;
+    fct_dgetrf_unblocked.name   = "unblocked";
+    fct_dgetrf_unblocked.helper = "Unblocked sequential LU (dgetf2)";
+    fct_dgetrf_unblocked.fctptr = dgetf2;
+    fct_dgetrf_unblocked.next   = NULL;
+
+    register_fct( &fct_dgetrf_unblocked, ALGO_GETRF );
 }

@@ -1,0 +1,9 @@
+seq n=511 : 5.237019e+00 GFlop/s
+bloc n=511 : 5.339330e+00 GFlop/s
+vendor n=511 : 1.856324e+01 GFlop/s
+seq n=512 : 6.050098e+00 GFlop/s
+bloc n=512 : 5.994086e+00 GFlop/s
+vendor n=512 : 1.868420e+01 GFlop/s
+seq n=513 : 5.280414e+00 GFlop/s
+bloc n=513 : 5.261248e+00 GFlop/s
+vendor n=513 : 1.819653e+01 GFlop/s

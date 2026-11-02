@@ -361,3 +361,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+test_affiche
+test_ddot_perf
+debug
+compile_commands.json
+myblas/dgetrf_seq_backup.c
+*.log

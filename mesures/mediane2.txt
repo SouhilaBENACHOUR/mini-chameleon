@@ -1,0 +1,6 @@
+bloc n=504 : 6.345703e+00 GFlop/s
+bloc n=508 : 6.473966e+00 GFlop/s
+bloc n=510 : 5.761361e+00 GFlop/s
+bloc n=512 : 6.037016e+00 GFlop/s
+bloc n=514 : 5.766009e+00 GFlop/s
+bloc n=520 : 6.462126e+00 GFlop/s

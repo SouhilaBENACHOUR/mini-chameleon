@@ -1,0 +1,37 @@
+=== check dgemm seq
+[32m
+ Congratulations all  500 tests succeeded
+[0m=== check dgetrf seq
+[32m
+ Congratulations all   25 tests succeeded
+[0m=== check dgetrf bloc
+[32m
+ Congratulations all   25 tests succeeded
+[0m=== perf dgetrf seq N=200
+Test: Basic sequential implementation of the dgetrf (seq)
+M=  200 N=  200: 3.125588e+00 GFlop/s[32m SUCCESS
+[0m=== perf dgetrf bloc N=200
+Test: Sequential blocked LU factorization (bloc)
+M=  200 N=  200: 4.261026e+00 GFlop/s[32m SUCCESS
+[0m=== perf dgetrf vendor N=200
+Test: VENDOR implementation of the dgetrf (vendor)
+M=  200 N=  200: 7.966267e+00 GFlop/s[32m SUCCESS
+[0m=== perf dgetrf seq N=600
+Test: Basic sequential implementation of the dgetrf (seq)
+M=  600 N=  600: 5.068028e+00 GFlop/s[32m SUCCESS
+[0m=== perf dgetrf bloc N=600
+Test: Sequential blocked LU factorization (bloc)
+M=  600 N=  600: 5.172469e+00 GFlop/s[32m SUCCESS
+[0m=== perf dgetrf vendor N=600
+Test: VENDOR implementation of the dgetrf (vendor)
+M=  600 N=  600: 1.913779e+01 GFlop/s[32m SUCCESS
+[0m=== perf dgetrf seq N=1000
+Test: Basic sequential implementation of the dgetrf (seq)
+M= 1000 N= 1000: 5.141451e+00 GFlop/s[32m SUCCESS
+[0m=== perf dgetrf bloc N=1000
+Test: Sequential blocked LU factorization (bloc)
+M= 1000 N= 1000: 5.132301e+00 GFlop/s[32m SUCCESS
+[0m=== perf dgetrf vendor N=1000
+Test: VENDOR implementation of the dgetrf (vendor)
+M= 1000 N= 1000: 2.439280e+01 GFlop/s[32m SUCCESS
+[0m

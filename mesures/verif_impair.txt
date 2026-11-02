@@ -1,0 +1,74 @@
+##### dgemm, tailles impaires (carrées et rectangulaires)
+seq M=1 N=1 K=1 : SUCCESS
+seq M=7 N=7 K=7 : SUCCESS
+seq M=99 N=99 K=99 : SUCCESS
+seq M=333 N=333 K=333 : SUCCESS
+seq M=997 N=997 K=997 : SUCCESS
+seq M=101 N=53 K=211 : SUCCESS
+seq M=13 N=401 K=29 : SUCCESS
+kij M=1 N=1 K=1 : SUCCESS
+kij M=7 N=7 K=7 : SUCCESS
+kij M=99 N=99 K=99 : SUCCESS
+kij M=333 N=333 K=333 : SUCCESS
+kij M=997 N=997 K=997 : SUCCESS
+kij M=101 N=53 K=211 : SUCCESS
+kij M=13 N=401 K=29 : SUCCESS
+ijk M=1 N=1 K=1 : SUCCESS
+ijk M=7 N=7 K=7 : SUCCESS
+ijk M=99 N=99 K=99 : SUCCESS
+ijk M=333 N=333 K=333 : SUCCESS
+ijk M=997 N=997 K=997 : SUCCESS
+ijk M=101 N=53 K=211 : SUCCESS
+ijk M=13 N=401 K=29 : SUCCESS
+jik M=1 N=1 K=1 : SUCCESS
+jik M=7 N=7 K=7 : SUCCESS
+jik M=99 N=99 K=99 : SUCCESS
+jik M=333 N=333 K=333 : SUCCESS
+jik M=997 N=997 K=997 : SUCCESS
+jik M=101 N=53 K=211 : SUCCESS
+jik M=13 N=401 K=29 : SUCCESS
+##### dgetrf, tailles impaires, blocs non puissances de 2
+unblocked b=7 N=1 : SUCCESS
+bloc b=7 N=1 : SUCCESS
+unblocked b=7 N=7 : SUCCESS
+bloc b=7 N=7 : SUCCESS
+unblocked b=7 N=99 : SUCCESS
+bloc b=7 N=99 : SUCCESS
+unblocked b=7 N=333 : SUCCESS
+bloc b=7 N=333 : SUCCESS
+unblocked b=7 N=997 : SUCCESS
+bloc b=7 N=997 : SUCCESS
+unblocked b=32 N=1 : SUCCESS
+bloc b=32 N=1 : SUCCESS
+unblocked b=32 N=7 : SUCCESS
+bloc b=32 N=7 : SUCCESS
+unblocked b=32 N=99 : SUCCESS
+bloc b=32 N=99 : SUCCESS
+unblocked b=32 N=333 : SUCCESS
+bloc b=32 N=333 : SUCCESS
+unblocked b=32 N=997 : SUCCESS
+bloc b=32 N=997 : SUCCESS
+unblocked b=33 N=1 : SUCCESS
+bloc b=33 N=1 : SUCCESS
+unblocked b=33 N=7 : SUCCESS
+bloc b=33 N=7 : SUCCESS
+unblocked b=33 N=99 : SUCCESS
+bloc b=33 N=99 : SUCCESS
+unblocked b=33 N=333 : SUCCESS
+bloc b=33 N=333 : SUCCESS
+unblocked b=33 N=997 : SUCCESS
+bloc b=33 N=997 : SUCCESS
+unblocked b=100 N=1 : SUCCESS
+bloc b=100 N=1 : SUCCESS
+unblocked b=100 N=7 : SUCCESS
+bloc b=100 N=7 : SUCCESS
+unblocked b=100 N=99 : SUCCESS
+bloc b=100 N=99 : SUCCESS
+unblocked b=100 N=333 : SUCCESS
+bloc b=100 N=333 : SUCCESS
+unblocked b=100 N=997 : SUCCESS
+bloc b=100 N=997 : SUCCESS
+##### dgetrf rectangulaire
+bloc M=100 N=60 : SUCCESS
+bloc M=60 N=100 : SUCCESS
+bloc M=333 N=127 : SUCCESS

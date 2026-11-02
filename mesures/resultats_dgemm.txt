@@ -1,0 +1,90 @@
+=== N=100 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M=  100 N=  100 K=  100: 2.134472e+00 GFlop/s
+=== N=100 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M=  100 N=  100 K=  100: 1.221747e+00 GFlop/s
+=== N=100 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M=  100 N=  100 K=  100: 1.295337e+00 GFlop/s
+=== N=200 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M=  200 N=  200 K=  200: 1.536246e+00 GFlop/s
+=== N=200 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M=  200 N=  200 K=  200: 1.070234e+00 GFlop/s
+=== N=200 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M=  200 N=  200 K=  200: 1.098222e+00 GFlop/s
+=== N=300 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M=  300 N=  300 K=  300: 7.829264e-01 GFlop/s
+=== N=300 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M=  300 N=  300 K=  300: 1.054708e+00 GFlop/s
+=== N=300 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M=  300 N=  300 K=  300: 1.067721e+00 GFlop/s
+=== N=400 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M=  400 N=  400 K=  400: 5.928341e-01 GFlop/s
+=== N=400 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M=  400 N=  400 K=  400: 1.018249e+00 GFlop/s
+=== N=400 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M=  400 N=  400 K=  400: 1.017561e+00 GFlop/s
+=== N=500 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M=  500 N=  500 K=  500: 6.016630e-01 GFlop/s
+=== N=500 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M=  500 N=  500 K=  500: 1.027399e+00 GFlop/s
+=== N=500 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M=  500 N=  500 K=  500: 1.036123e+00 GFlop/s
+=== N=600 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M=  600 N=  600 K=  600: 5.989037e-01 GFlop/s
+=== N=600 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M=  600 N=  600 K=  600: 1.017467e+00 GFlop/s
+=== N=600 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M=  600 N=  600 K=  600: 9.978357e-01 GFlop/s
+=== N=700 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M=  700 N=  700 K=  700: 6.059070e-01 GFlop/s
+=== N=700 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M=  700 N=  700 K=  700: 1.016563e+00 GFlop/s
+=== N=700 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M=  700 N=  700 K=  700: 1.022554e+00 GFlop/s
+=== N=800 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M=  800 N=  800 K=  800: 5.161563e-01 GFlop/s
+=== N=800 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M=  800 N=  800 K=  800: 9.972371e-01 GFlop/s
+=== N=800 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M=  800 N=  800 K=  800: 9.855071e-01 GFlop/s
+=== N=900 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M=  900 N=  900 K=  900: 6.027785e-01 GFlop/s
+=== N=900 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M=  900 N=  900 K=  900: 1.012473e+00 GFlop/s
+=== N=900 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M=  900 N=  900 K=  900: 1.016018e+00 GFlop/s
+=== N=1000 VERSION=kij ===
+Test: Sequential GEMM, loop order k-i-j (kij)
+tA=NoTrans tB=NoTrans M= 1000 N= 1000 K= 1000: 6.004163e-01 GFlop/s
+=== N=1000 VERSION=ijk ===
+Test: Sequential GEMM, loop order i-j-k (ijk)
+tA=NoTrans tB=NoTrans M= 1000 N= 1000 K= 1000: 1.008142e+00 GFlop/s
+=== N=1000 VERSION=jik ===
+Test: Sequential GEMM, loop order j-i-k (jik)
+tA=NoTrans tB=NoTrans M= 1000 N= 1000 K= 1000: 9.877738e-01 GFlop/s

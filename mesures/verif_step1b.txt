@@ -1,0 +1,24 @@
+=== flags
+C_FLAGS = -march=native -O3 -DNDEBUG -fPIC -fopenmp
+=== appels BLAS dans dgetrf_bloc.c et dgetf2
+myblas/dgetrf_bloc.c:34:            cblas_dtrsm(
+myblas/dgetrf_bloc.c:49:            cblas_dtrsm(
+myblas/dgetrf_bloc.c:64:            dgemm_seq(
+=== check dgemm
+[0m=== check dgetrf seq
+[0m=== check dgetrf bloc
+[0m=== perf dgemm, 1 coeur
+seq 100 : tA=NoTrans tB=NoTrans M=  100 N=  100 K=  100: 6.250000e+00 GFlop/s
+vendor 100 : tA=NoTrans tB=NoTrans M=  100 N=  100 K=  100: 3.159558e+00 GFlop/s
+seq 200 : tA=NoTrans tB=NoTrans M=  200 N=  200 K=  200: 4.672897e+00 GFlop/s
+vendor 200 : tA=NoTrans tB=NoTrans M=  200 N=  200 K=  200: 2.083333e+01 GFlop/s
+seq 400 : tA=NoTrans tB=NoTrans M=  400 N=  400 K=  400: 4.816376e+00 GFlop/s
+vendor 400 : tA=NoTrans tB=NoTrans M=  400 N=  400 K=  400: 3.046894e+01 GFlop/s
+seq 600 : tA=NoTrans tB=NoTrans M=  600 N=  600 K=  600: 4.962665e+00 GFlop/s
+vendor 600 : tA=NoTrans tB=NoTrans M=  600 N=  600 K=  600: 3.141133e+01 GFlop/s
+seq 800 : tA=NoTrans tB=NoTrans M=  800 N=  800 K=  800: 4.981853e+00 GFlop/s
+vendor 800 : tA=NoTrans tB=NoTrans M=  800 N=  800 K=  800: 3.315847e+01 GFlop/s
+seq 1000 : tA=NoTrans tB=NoTrans M= 1000 N= 1000 K= 1000: 4.981047e+00 GFlop/s
+vendor 1000 : tA=NoTrans tB=NoTrans M= 1000 N= 1000 K= 1000: 3.425303e+01 GFlop/s
+=== perf dgetrf, 1 coeur
+seq : [0mbloc : [0mvendor : [0m

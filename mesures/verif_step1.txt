@@ -1,0 +1,46 @@
+=== flags
+C_FLAGS = -march=native -O3 -DNDEBUG -fPIC -fopenmp
+=== check dgemm
+ Congratulations all  500 tests succeeded
+[0m=== check dgetrf
+[32m
+ Congratulations all   25 tests succeeded
+[0m=== fonctions dans dgetrf_seq.c
+19:dgetf2( CBLAS_LAYOUT layout, int M, int N, double *A, int lda )
+39:   return dgetrf_bloc( layout, M , N, A, lda);
+=== options perf_dgetrf
+Options:
+  -h --help  Show this help
+  -v --v=xxx Select the version to test among:
+    starpu   StarPU implementation of the dgetrf
+    bloc     Sequential blocked LU factorization
+    mpi      MPI tile-based implementation of the dgetrf
+    omp-t    OpenMP tile-based implementation of the dgetrf
+    omp      OpenMP implementation of the dgetrf
+    vendor   VENDOR implementation of the dgetrf
+    seq      Basic sequential implementation of the dgetrf
+
+  -M x        Set the M value
+  -N x        Set the N value
+  -K x        Set the K value
+  -b --nb=x   Set the block size b value
+  -A          Switch transA to CblasTrans
+  -B          Switch transB to CblasTrans
+  -i --iter=x Set the number of iteration
+  -c --check  Enable checking of the result
+=== perf dgemm, 1 cœur
+seq 100 : bash: taskset: command not found
+vendor 100 : bash: taskset: command not found
+seq 200 : bash: taskset: command not found
+vendor 200 : bash: taskset: command not found
+seq 400 : bash: taskset: command not found
+vendor 400 : bash: taskset: command not found
+seq 600 : bash: taskset: command not found
+vendor 600 : bash: taskset: command not found
+seq 800 : bash: taskset: command not found
+vendor 800 : bash: taskset: command not found
+seq 1000 : bash: taskset: command not found
+vendor 1000 : bash: taskset: command not found
+=== perf dgetrf, 1 cœur
+seq : bash: taskset: command not found
+vendor : bash: taskset: command not found

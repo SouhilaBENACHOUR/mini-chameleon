@@ -1,0 +1,68 @@
+=== options perf_ddot
+Options:
+  -h --help  Show this help
+  -v --v=xxx Select the version to test among:
+    seq      Sequential version of DDOT
+
+  -M x        Set the M value
+  -N x        Set the N value
+  -K x        Set the K value
+  -b --nb=x   Set the block size b value
+  -A          Switch transA to CblasTrans
+  -B          Switch transB to CblasTrans
+  -i --iter=x Set the number of iteration
+  -c --check  Enable checking of the result
+=== check ddot seq
+ Congratulations all    5 tests succeeded
+[0m=== check dgemm kij
+ Congratulations all  125 tests succeeded
+[0m=== check dgemm ijk
+ Congratulations all  125 tests succeeded
+[0m=== check dgemm jik
+ Congratulations all  125 tests succeeded
+[0m=== ddot, courbe 1.3 (1 coeur)
+50 : N=   50: 1.000000e-01 GFlop/s
+62 : N=   62: 1.240000e-01 GFlop/s
+77 : N=   77: 1.540000e-01 GFlop/s
+96 : N=   96: 1.920000e-01 GFlop/s
+120 : N=  120: 2.400000e-01 GFlop/s
+150 : N=  150: 3.000000e-01 GFlop/s
+187 : N=  187: 3.740000e-01 GFlop/s
+233 : N=  233: 4.660000e-01 GFlop/s
+291 : N=  291: 5.820000e-01 GFlop/s
+363 : N=  363: 7.260000e-01 GFlop/s
+453 : N=  453: 9.060000e-01 GFlop/s
+566 : N=  566: 1.132000e+00 GFlop/s
+707 : N=  707: 7.070000e-01 GFlop/s
+883 : N=  883: 8.830000e-01 GFlop/s
+1103 : N= 1103: 1.103000e+00 GFlop/s
+1378 : N= 1378: 9.186667e-01 GFlop/s
+1722 : N= 1722: 8.610000e-01 GFlop/s
+2152 : N= 2152: 2.869333e-01 GFlop/s
+2690 : N= 2690: 3.362500e-01 GFlop/s
+3362 : N= 3362: 3.955294e-01 GFlop/s
+4202 : N= 4202: 4.943529e-01 GFlop/s
+5252 : N= 5252: 5.835556e-01 GFlop/s
+6565 : N= 6565: 6.252381e-01 GFlop/s
+8206 : N= 8206: 7.460000e-01 GFlop/s
+10257 : N= 10257: 8.547500e-01 GFlop/s
+12821 : N= 12821: 9.157857e-01 GFlop/s
+16026 : N= 16026: 1.033935e+00 GFlop/s
+20032 : N= 20032: 1.082811e+00 GFlop/s
+25040 : N= 25040: 1.088696e+00 GFlop/s
+31300 : N= 31300: 1.203846e+00 GFlop/s
+39125 : N= 39125: 5.114379e-01 GFlop/s
+48906 : N= 48906: 1.339890e+00 GFlop/s
+61132 : N= 61132: 1.373753e+00 GFlop/s
+76415 : N= 76415: 1.415093e+00 GFlop/s
+95518 : N= 95518: 1.447242e+00 GFlop/s
+119397 : N= 119397: 1.464994e+00 GFlop/s
+149246 : N= 149246: 1.492460e+00 GFlop/s
+186557 : N= 186557: 1.498450e+00 GFlop/s
+233196 : N= 233196: 1.529154e+00 GFlop/s
+291495 : N= 291495: 1.542302e+00 GFlop/s
+364368 : N= 364368: 1.540668e+00 GFlop/s
+455460 : N= 455460: 1.533535e+00 GFlop/s
+569325 : N= 569325: 1.534569e+00 GFlop/s
+711656 : N= 711656: 1.514162e+00 GFlop/s
+889570 : N= 889570: 1.490067e+00 GFlop/s
