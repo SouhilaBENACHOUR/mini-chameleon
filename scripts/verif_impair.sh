@@ -12,7 +12,7 @@ for bs in 7 32 33 100; do
   for s in 1 7 99 333 997; do
     for v in unblocked bloc; do
       echo -n "$v b=$bs N=$s : "
-      BLOCKSIZE=$bs $B/perf_dgetrf -v $v -M $s -N $s --check | tail -2 | grep -o "SUCCESS\|FAIL" | head -1
+      LU_BLOCKSIZE=$bs $B/perf_dgetrf -v $v -M $s -N $s --check | tail -2 | grep -o "SUCCESS\|FAIL" | head -1
     done
   done
 done
