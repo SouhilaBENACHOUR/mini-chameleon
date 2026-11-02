@@ -65,6 +65,7 @@ int dgemm_scalaire( CBLAS_LAYOUT layout,
                     double alpha, const double *A, int lda,
                                   const double *B, int ldb,
                     double beta,        double *C, int ldc );
+int dgemm_vecto( CBLAS_LAYOUT layout, CBLAS_TRANSPOSE transA, CBLAS_TRANSPOSE transB, int M, int N, int K, double alpha, const double *A, int lda, const double *B, int ldb, double beta, double *C, int ldc );
 int dgemm_bloc( CBLAS_LAYOUT layout,
                 CBLAS_TRANSPOSE transA, CBLAS_TRANSPOSE transB,
                 int M, int N, int K,

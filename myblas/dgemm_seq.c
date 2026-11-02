@@ -89,7 +89,7 @@ int dgemm_seq( CBLAS_LAYOUT layout, CBLAS_TRANSPOSE transA,
                const int lda, const double *B, const int ldb,
                const double beta, double *C, const int ldc )
 {
-    return dgemm_scalaire( layout, transA, transB, M, N, K,
+    return dgemm_bloc( layout, transA, transB, M, N, K,
                            alpha, A, lda, B, ldb, beta, C, ldc );
 }
 

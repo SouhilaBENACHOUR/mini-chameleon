@@ -38,7 +38,7 @@ int dgemm_bloc( CBLAS_LAYOUT layout, CBLAS_TRANSPOSE transA,
                                                               : B + ldb * kk + jj;
                 double       *Cb = C + ldc * jj + ii;
 
-                dgemm_scalaire( layout, transA, transB, mm, nn, kb,
+                dgemm_vecto( layout, transA, transB, mm, nn, kb,
                                 alpha, Ab, lda, Bb, ldb, bt, Cb, ldc );
             }
         }
