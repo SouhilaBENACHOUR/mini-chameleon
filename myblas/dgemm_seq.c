@@ -108,5 +108,5 @@ dgemm_seq_init( void )
     register_fct( &fct_dgemm_seq, ALGO_GEMM );
 
     /* Read the value of dgemm_block_size */
-    dgemm_seq_block_size = myblas_getenv_value_int( "BLOCKSIZE", 32 );
+    dgemm_seq_block_size = myblas_getenv_value_int( "GEMM_BLOCKSIZE", 32 );
 }

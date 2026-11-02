@@ -7,9 +7,10 @@
 int
 dgetrf_bloc( CBLAS_LAYOUT layout, int M, int N, double *A, int lda )
 {
-    int b = myblas_getenv_value_int( "BLOCKSIZE", 32 ); /* Block size */
+    int b = myblas_getenv_value_int( "LU_BLOCKSIZE", 32 ); /* Block size */
     int k, m, n;
     int K = (M < N) ? M : N;
+    if ( b < 1 ) b = 32; /* garde-fou : sinon boucle infinie si LU_BLOCKSIZE <= 0 */
 
     if (layout != CblasColMajor) {
         return ALGONUM_NOT_IMPLEMENTED;
