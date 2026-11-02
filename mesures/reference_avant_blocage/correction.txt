@@ -1,0 +1,27 @@
+== check_dgemm -v seq (o2)
+ Congratulations all  500 tests succeeded
+[0m== check_dgemm -v seq (o3)
+ Congratulations all  500 tests succeeded
+[0m== check_dgemm -v seq (o3-haswell)
+ Congratulations all  500 tests succeeded
+[0m== check_dgetrf -v seq (o3-haswell)
+ Congratulations all   25 tests succeeded
+[0m== tailles difficiles (o3-haswell)
+== tailles difficiles et transpositions (o3-haswell)
+M=1 N=1 K=1 : SUCCESS
+M=3 N=3 K=3 : SUCCESS
+M=4 N=4 K=4 : SUCCESS
+M=5 N=5 K=5 : SUCCESS
+M=7 N=7 K=7 : SUCCESS
+M=8 N=8 K=8 : SUCCESS
+M=9 N=9 K=9 : SUCCESS
+M=17 N=17 K=17 : SUCCESS
+M=99 N=99 K=99 : SUCCESS
+M=333 N=333 K=333 : SUCCESS
+M=997 N=997 K=997 : SUCCESS
+M=101 N=53 K=211 : SUCCESS
+M=13 N=401 K=29 : SUCCESS
+M=30 N=13 K=25 : SUCCESS
+option -A : SUCCESS
+option -B : SUCCESS
+option -A -B : SUCCESS

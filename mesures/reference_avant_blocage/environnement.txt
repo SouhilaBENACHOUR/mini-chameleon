@@ -1,0 +1,14 @@
+Date    : Mon Nov  2 16:33:51 UTC 2026
+Noeud   : miriel042.formation.cluster
+gcc     : gcc (GCC) 16.2.0
+Threads : OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
+Charge  :  16:33:51  up 42 days  4:22,  0 users,  load average: 2.22, 1.04, 0.65
+Code mesure : dgemm_seq.c, md5 = 9f416e5c249a28707fb3cfb7bb260deb
+Model name:                              Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz
+CPU(s) scaling MHz:                      100%
+CPU max MHz:                             2500.0000
+CPU min MHz:                             1200.0000
+L1d cache:                               768 KiB (24 instances)
+L2 cache:                                6 MiB (24 instances)
+L3 cache:                                60 MiB (4 instances)
+AVX2/FMA: avx2 fma 

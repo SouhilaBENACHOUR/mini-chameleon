@@ -1,0 +1,12 @@
+o2           n=500       2.07 GFlop/s  =   5.2 % du pic
+o2           n=1000      2.06 GFlop/s  =   5.2 % du pic
+o2           n=1500      1.83 GFlop/s  =   4.6 % du pic
+o3           n=500       3.65 GFlop/s  =   9.1 % du pic
+o3           n=1000      3.66 GFlop/s  =   9.2 % du pic
+o3           n=1500      2.77 GFlop/s  =   6.9 % du pic
+o3-haswell   n=500       5.00 GFlop/s  =  12.5 % du pic
+o3-haswell   n=1000      4.82 GFlop/s  =  12.1 % du pic
+o3-haswell   n=1500      3.58 GFlop/s  =   9.0 % du pic
+vendor       n=500      33.97 GFlop/s  =  84.9 % du pic
+vendor       n=1000     34.82 GFlop/s  =  87.0 % du pic
+vendor       n=1500     35.08 GFlop/s  =  87.7 % du pic
