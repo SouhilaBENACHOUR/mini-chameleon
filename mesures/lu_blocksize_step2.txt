@@ -1,0 +1,5 @@
+LU_BLOCKSIZE sweep, N=1000, 1 core, median of 5 fresh processes (perf_dgetrf -v bloc -i 1), build/opt -march=native
+32: 1.774317e+01
+48: 1.781339e+01
+64: 1.758440e+01
+80: 1.715821e+01
