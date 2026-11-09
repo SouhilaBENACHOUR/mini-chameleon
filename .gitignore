@@ -367,3 +367,7 @@ debug
 compile_commands.json
 myblas/dgetrf_seq_backup.c
 *.log
+test_ld
+test_warm_lu
+test_warm_lu2
+verif_impair_new.txt
