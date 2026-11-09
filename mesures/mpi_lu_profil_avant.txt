@@ -1,0 +1,5 @@
+LU MPI du prof instrumentee (MPI_Wtime), n=4000, b=64, 24 processus, grille 1x24, miriel031 (nœud réservé)
+Dernière itération (GFlop/s = 232.9942), temps total environ 0.19 s :
+max sur les rangs (s) : getrf=0.000 bcast_kk=0.008 trsm=0.006 bcast_m=0.115 recv=0.000 send=0.000 gemm=0.100
+moyenne (s)          : getrf=0.000 bcast_kk=0.007 trsm=0.005 bcast_m=0.092 recv=0.000 send=0.000 gemm=0.077
+La premiere iteration est plus lente (58 GFlop/s) : echauffement.
