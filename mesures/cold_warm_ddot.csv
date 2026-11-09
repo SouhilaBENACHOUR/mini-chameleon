@@ -1,0 +1,9 @@
+routine,mode,version,size,median_gflops
+ddot,cold,seq,1000,6.666667e-01
+ddot,warm,seq,1000,1.616056e+00
+ddot,cold,seq,10000,8.333333e-01
+ddot,warm,seq,10000,1.624667e+00
+ddot,cold,seq,100000,1.459854e+00
+ddot,warm,seq,100000,1.589002e+00
+ddot,cold,seq,1000000,1.455604e+00
+ddot,warm,seq,1000000,1.505671e+00
