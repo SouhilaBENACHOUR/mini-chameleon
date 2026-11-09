@@ -1,0 +1,8 @@
+dgetrf,cold,seq,200,7.504944e+00
+dgetrf,cold,seq,500,1.429458e+01
+dgetrf,cold,seq,999,1.674239e+01
+dgetrf,cold,seq,1000,1.773609e+01
+dgetrf,cold,vendor,200,7.895245e+00
+dgetrf,cold,vendor,500,1.792906e+01
+dgetrf,cold,vendor,999,2.401195e+01
+dgetrf,cold,vendor,1000,2.453113e+01
