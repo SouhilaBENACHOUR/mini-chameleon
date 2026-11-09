@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 
 PEAK = 40.0  # estimated peak per core, GFlop/s (2 FMA x 4 doubles x 2 flops x 2.5 GHz)
 NOTES = {
-    "dgetrf": "warm_dgetrf factors the same matrix in place: L underflows (denormals) after "
-              "~110 passes, so the warm value at N=500 is biased low (seq and vendor).",
+    "dgetrf": "warm: matrix restored before each timed call (A0 -> A, not timed), to avoid "
+              "denormals. vendor warm at N=500 omitted (in-place measurement, biased by denormals).",
     "ddot":   "perf_ddot times one call with a 1 us clock: cold values at N=1000 are quantised.",
 }
 
