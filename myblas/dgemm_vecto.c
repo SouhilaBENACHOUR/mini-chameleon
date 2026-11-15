@@ -54,19 +54,47 @@ int dgemm_vecto( CBLAS_LAYOUT layout, CBLAS_TRANSPOSE transA,
             }
         }
 
-        for( k=0; k<K; k++ ) {
-            const double *Ak = A + lda * k;    /* colonne k de A */
-            double  bkn = alpha * B[ ldb * n + k ];
-            __m256d vb  = _mm256_set1_pd( bkn );   /* (b, b, b, b) */
+        /* k par paquets de 4 : C lu et ecrit 1 fois pour 4 FMA */
+        for( k=0; k+4<=K; k+=4 ) {
+            const double *A0 = A + lda * k;    /* colonnes k a k+3 de A */
+            const double *A1 = A0 + lda;
+            const double *A2 = A1 + lda;
+            const double *A3 = A2 + lda;
+            double b0 = alpha * B[ ldb * n + k     ];
+            double b1 = alpha * B[ ldb * n + k + 1 ];
+            double b2 = alpha * B[ ldb * n + k + 2 ];
+            double b3 = alpha * B[ ldb * n + k + 3 ];
+            __m256d vb0 = _mm256_set1_pd( b0 );
+            __m256d vb1 = _mm256_set1_pd( b1 );
+            __m256d vb2 = _mm256_set1_pd( b2 );
+            __m256d vb3 = _mm256_set1_pd( b3 );
 
             /* Partie vectorielle : 4 lignes a la fois */
             for( m=0; m+4<=M; m+=4 ) {
-                __m256d va = _mm256_loadu_pd( Ak + m );
-                __m256d vc = _mm256_loadu_pd( Cn + m );
-                vc = _mm256_fmadd_pd( va, vb, vc );  /* vc = va*vb + vc */
-                _mm256_storeu_pd( Cn + m, vc );
+                __m256d vc = _mm256_loadu_pd( Cn + m );                 /* 1 lecture  */
+                vc = _mm256_fmadd_pd( _mm256_loadu_pd( A0 + m ), vb0, vc );
+                vc = _mm256_fmadd_pd( _mm256_loadu_pd( A1 + m ), vb1, vc );
+                vc = _mm256_fmadd_pd( _mm256_loadu_pd( A2 + m ), vb2, vc );
+                vc = _mm256_fmadd_pd( _mm256_loadu_pd( A3 + m ), vb3, vc );
+                _mm256_storeu_pd( Cn + m, vc );                         /* 1 ecriture */
             }
             /* Reste : au plus 3 lignes */
+            for( ; m<M; m++ ) {
+                Cn[m] += A0[m] * b0 + A1[m] * b1 + A2[m] * b2 + A3[m] * b3;
+            }
+        }
+
+        /* Reste de k (0 a 3 valeurs) : comme la version 1 */
+        for( ; k<K; k++ ) {
+            const double *Ak = A + lda * k;
+            double  bkn = alpha * B[ ldb * n + k ];
+            __m256d vb  = _mm256_set1_pd( bkn );
+            for( m=0; m+4<=M; m+=4 ) {
+                __m256d va = _mm256_loadu_pd( Ak + m );
+                __m256d vc = _mm256_loadu_pd( Cn + m );
+                vc = _mm256_fmadd_pd( va, vb, vc );
+                _mm256_storeu_pd( Cn + m, vc );
+            }
             for( ; m<M; m++ ) {
                 Cn[m] += Ak[m] * bkn;
             }
