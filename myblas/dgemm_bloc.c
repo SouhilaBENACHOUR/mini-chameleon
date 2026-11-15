@@ -7,7 +7,7 @@
 #include "myblas.h"
 
 /* Taille de bloc, lue dans la variable d'environnement GEMM_BLOCKSIZE */
-static int dgemm_bloc_block_size = 32;
+static int dgemm_bloc_block_size = 128;
 
 int dgemm_bloc( CBLAS_LAYOUT layout, CBLAS_TRANSPOSE transA,
                 CBLAS_TRANSPOSE transB, const int M, const int N,
@@ -78,5 +78,5 @@ dgemm_bloc_init( void )
 
     register_fct( &fct_dgemm_bloc, ALGO_GEMM );
 
-    dgemm_bloc_block_size = myblas_getenv_value_int( "GEMM_BLOCKSIZE", 32 );
+    dgemm_bloc_block_size = myblas_getenv_value_int( "GEMM_BLOCKSIZE", 128 );
 }
