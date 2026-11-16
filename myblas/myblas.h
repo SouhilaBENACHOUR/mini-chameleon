@@ -119,6 +119,24 @@ int dgetrf_tiled_starpu( CBLAS_LAYOUT layout,
 /* Produit de matrices distribue (MPI) */
 void affiche_dist( int M, int N, int b, const double **Atile, FILE *flux );
 double **distribute( int M, int N, int b, const double *Alapack, int lda );
+int my_pdgemm( CBLAS_LAYOUT layout,
+               CBLAS_TRANSPOSE transA, CBLAS_TRANSPOSE transB,
+               int M, int N, int K, int b,
+               double alpha, const double **A,
+                             const double **B,
+               double beta,        double **C );
+
+typedef struct pdgemm_times_s {
+    double t_dist;
+    double t_comp;
+    double t_cent;
+} pdgemm_times_t;
+
+int dgemm_dist_compute_centralize( int M, int N, int K, int b,
+                                   double alpha, const double *A, int lda,
+                                                 const double *B, int ldb,
+                                   double beta,        double *C, int ldc,
+                                   pdgemm_times_t *times );
 #ifdef __cplusplus
 }
 #endif
