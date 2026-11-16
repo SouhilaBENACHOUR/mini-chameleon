@@ -1,0 +1,11 @@
+Mon Nov 16 16:36:44 UTC 2026
+ 16:36:44  up  10:05,  0 users,  load average: 0.55, 1.45, 0.81
+coeurs : 24
+ 16:41:45  up  10:10,  0 users,  load average: 1.08, 1.95, 1.24
+24
+miriel037.formation.cluster
+ 17:42:06 up 10:10,  1 user,  load average: 0,84, 1,83, 1,22
+24
+Mode(s) opératoire(s) des processeurs :   32-bit, 64-bit
+Nom de modèle :                           Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz
+Modèle :                                  63
