@@ -32,6 +32,7 @@ set( DGEMM_srcs
   dgemm_jik.c
   dgemm_vecto.c
   dgemm_bloc.c
+  pdgemm.c
   
 )
 

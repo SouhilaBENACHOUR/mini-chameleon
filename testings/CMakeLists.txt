@@ -18,6 +18,7 @@ set(TESTINGS
   check_dgetrf.c
   perf_ddot.c
   perf_dgemm.c
+  test_dist.c
   perf_dgetrf.c
   warm_ddot.c
   warm_dgemm.c

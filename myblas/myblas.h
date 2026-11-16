@@ -115,6 +115,10 @@ int dgetrf_tiled_omp( CBLAS_LAYOUT layout,
 int dgetrf_tiled_starpu( CBLAS_LAYOUT layout,
                          int M, int N, int b, double **A);
 
+
+/* Produit de matrices distribue (MPI) */
+void affiche_dist( int M, int N, int b, const double **Atile, FILE *flux );
+double **distribute( int M, int N, int b, const double *Alapack, int lda );
 #ifdef __cplusplus
 }
 #endif
