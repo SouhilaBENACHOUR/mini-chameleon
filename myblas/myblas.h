@@ -103,6 +103,7 @@ int dgemm_tiled_starpu( CBLAS_LAYOUT layout,
 int dgetrf_seq( CBLAS_LAYOUT layout,
                 int m, int n, double *A, int lda );
 int dgetf2( CBLAS_LAYOUT layout, int m, int n, double *A, int lda);
+int dgetf2_vecto( CBLAS_LAYOUT layout, int m, int n, double *A, int lda );
 
 int dgetrf_bloc(CBLAS_LAYOUT layout, int m , int n , double *A, int lda);
 int dgetrf_vendor( CBLAS_LAYOUT layout,

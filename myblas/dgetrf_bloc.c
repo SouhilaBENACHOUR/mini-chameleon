@@ -25,7 +25,7 @@ dgetrf_bloc( CBLAS_LAYOUT layout, int M, int N, double *A, int lda )
          * Factorize the diagonal block.
          * A + lda*k + k points to A(k,k).
          */
-        dgetf2(CblasColMajor, kb, kb, A + lda * k + k, lda);
+        dgetf2_vecto(CblasColMajor, kb, kb, A + lda * k + k, lda);
 
         /*
          * Compute the block to the right:

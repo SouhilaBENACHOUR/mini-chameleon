@@ -46,6 +46,7 @@ set( DGETRF_srcs
   # ADD HERE: your additional dgetrf implementation
   #  dgetrf_xxx.c
   dgetrf_bloc.c
+  dgetrf_vecto.c
 )
 
 #------------------------------------------
